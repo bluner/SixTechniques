@@ -94,6 +94,68 @@
           }
         ]
       }
+    },
+    {
+      "name": "MetalBodyOnKeyPressed",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_body_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/procedures/MetalBodyOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MetalBody",
+      "type": "keybind",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_body",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/network/MetalBodyMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "MetalBodyCooldown",
+      "type": "potioneffect",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_body_cooldown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/potion/MetalBodyCooldownMobEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "MetalBodyEffect",
+      "type": "potioneffect",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_body_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/potion/MetalBodyEffectMobEffect.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -126,7 +188,10 @@
   "language_map": {
     "en_us": {
       "key.sixtechniques.flash_step": "Flash Step",
-      "key.sixtechniques.geppo": "Geppo"
+      "key.sixtechniques.geppo": "Geppo",
+      "effect.sixtechniques.metal_body_cooldown": "Metal Body Cooldown",
+      "key.sixtechniques.metal_body": "Metal Body",
+      "effect.sixtechniques.metal_body_effect": "Metal Body"
     }
   },
   "foldersRoot": {

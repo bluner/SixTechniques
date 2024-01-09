@@ -15,6 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
+import net.mcreator.sixtechniques.network.MetalBodyMessage;
 import net.mcreator.sixtechniques.network.GeppoMessage;
 import net.mcreator.sixtechniques.network.FlashStepMessage;
 import net.mcreator.sixtechniques.SixtechniquesMod;
@@ -47,11 +48,25 @@ public class SixtechniquesModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping METAL_BODY = new KeyMapping("key.sixtechniques.metal_body", GLFW.GLFW_KEY_C, "key.categories.gameplay") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				SixtechniquesMod.PACKET_HANDLER.sendToServer(new MetalBodyMessage(0, 0));
+				MetalBodyMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(FLASH_STEP);
 		event.register(GEPPO);
+		event.register(METAL_BODY);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -61,6 +76,7 @@ public class SixtechniquesModKeyMappings {
 			if (Minecraft.getInstance().screen == null) {
 				FLASH_STEP.consumeClick();
 				GEPPO.consumeClick();
+				METAL_BODY.consumeClick();
 			}
 		}
 	}

@@ -1,4 +1,7 @@
 {
   "key.sixtechniques.flash_step": "Flash Step",
-  "key.sixtechniques.geppo": "Geppo"
+  "key.sixtechniques.geppo": "Geppo",
+  "effect.sixtechniques.metal_body_cooldown": "Metal Body Cooldown",
+  "key.sixtechniques.metal_body": "Metal Body",
+  "effect.sixtechniques.metal_body_effect": "Metal Body"
 }
