@@ -1,5 +1,40 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "GeppoOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geppo_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/procedures/GeppoOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Geppo",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "geppo",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/network/GeppoMessage.java"
+        ]
+      }
+    }
+  ],
   "variable_elements": [
     {
       "name": "Flash_Step_Cooldown",
@@ -28,7 +63,9 @@
   ],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "key.sixtechniques.geppo": "Geppo"
+    }
   },
   "foldersRoot": {
     "name": "~",
