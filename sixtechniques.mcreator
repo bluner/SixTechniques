@@ -3,6 +3,7 @@
     {
       "name": "GeppoOnKeyPressed",
       "type": "procedure",
+      "sortid": 2,
       "compiles": true,
       "locked_code": false,
       "registry_name": "geppo_on_key_pressed",
@@ -25,12 +26,72 @@
     {
       "name": "Geppo",
       "type": "keybind",
+      "sortid": 4,
       "compiles": true,
       "locked_code": false,
       "registry_name": "geppo",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/sixtechniques/network/GeppoMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "FlashStepOnKeyPressed",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flash_step_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/procedures/FlashStepOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FlashStep",
+      "type": "keybind",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flash_step",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/network/FlashStepMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "PlayerDeath",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_death",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/procedures/PlayerDeathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
         ]
       }
     }
@@ -64,6 +125,7 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "key.sixtechniques.flash_step": "Flash Step",
       "key.sixtechniques.geppo": "Geppo"
     }
   },

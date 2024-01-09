@@ -16,10 +16,24 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
 import net.mcreator.sixtechniques.network.GeppoMessage;
+import net.mcreator.sixtechniques.network.FlashStepMessage;
 import net.mcreator.sixtechniques.SixtechniquesMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class SixtechniquesModKeyMappings {
+	public static final KeyMapping FLASH_STEP = new KeyMapping("key.sixtechniques.flash_step", GLFW.GLFW_KEY_V, "key.categories.movement") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				SixtechniquesMod.PACKET_HANDLER.sendToServer(new FlashStepMessage(0, 0));
+				FlashStepMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 	public static final KeyMapping GEPPO = new KeyMapping("key.sixtechniques.geppo", GLFW.GLFW_KEY_SPACE, "key.categories.movement") {
 		private boolean isDownOld = false;
 
@@ -36,6 +50,7 @@ public class SixtechniquesModKeyMappings {
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
+		event.register(FLASH_STEP);
 		event.register(GEPPO);
 	}
 
@@ -44,6 +59,7 @@ public class SixtechniquesModKeyMappings {
 		@SubscribeEvent
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
+				FLASH_STEP.consumeClick();
 				GEPPO.consumeClick();
 			}
 		}
