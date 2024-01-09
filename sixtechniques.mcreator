@@ -1,27 +1,9 @@
 {
-  "mod_elements": [
-    {
-      "name": "SuperDirt",
-      "type": "block",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "super_dirt",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/sixtechniques/models/item/super_dirt.json",
-          "src/main/resources/assets/sixtechniques/blockstates/super_dirt.json",
-          "src/main/resources/assets/sixtechniques/models/block/super_dirt.json",
-          "src/main/java/net/mcreator/sixtechniques/block/SuperDirtBlock.java"
-        ]
-      }
-    }
-  ],
+  "mod_elements": [],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {
-      "block.sixtechniques.super_dirt": "Super Dirt"
-    }
+    "en_us": {}
   },
   "foldersRoot": {
     "name": "~",
