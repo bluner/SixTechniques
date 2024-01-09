@@ -16,12 +16,12 @@ public class GeppoOnKeyPressedProcedure {
 		if (SixtechniquesModVariables.MapVariables.get(world).Geppo_Cooldown > 0) {
 			SixtechniquesModVariables.MapVariables.get(world).Geppo_Cooldown = SixtechniquesModVariables.MapVariables.get(world).Geppo_Cooldown - 1;
 			SixtechniquesModVariables.MapVariables.get(world).syncData(world);
-			entity.setDeltaMovement(new Vec3(0, 1, 0));
+			entity.setDeltaMovement(new Vec3(0, 0.5, 0));
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, (entity.getX()), (entity.getY()), (entity.getZ()), 10, 0.1, 0.1, 0.1, 0.1);
+				_level.sendParticles(ParticleTypes.CAMPFIRE_COSY_SMOKE, (entity.getX()), (entity.getY()), (entity.getZ()), 10, 0.1, 0.1, 0.1, 0.25);
 		} else {
 			SixtechniquesMod.queueServerWork(200, () -> {
-				SixtechniquesModVariables.MapVariables.get(world).Flash_Step_Cooldown = 5;
+				SixtechniquesModVariables.MapVariables.get(world).Geppo_Cooldown = 5;
 				SixtechniquesModVariables.MapVariables.get(world).syncData(world);
 			});
 		}
