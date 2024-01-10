@@ -7,13 +7,13 @@
     },
     "showParticles": false,
     "actionSound": {
-      "value": "entity.arrow.shoot"
+      "value": "CUSTOM:tempestsound"
     },
     "igniteFire": false,
     "power": 3.0,
     "damage": 5.0,
     "knockback": 0,
     "entityModel": "Modelhopefultempestkick",
-    "customModelTexture": "hopefulltempest.png"
+    "customModelTexture": "tempest.png"
   }
 }

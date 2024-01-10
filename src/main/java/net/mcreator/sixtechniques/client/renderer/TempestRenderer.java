@@ -16,7 +16,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 public class TempestRenderer extends EntityRenderer<TempestEntity> {
-	private static final ResourceLocation texture = new ResourceLocation("sixtechniques:textures/entities/hopefulltempest.png");
+	private static final ResourceLocation texture = new ResourceLocation("sixtechniques:textures/entities/tempest.png");
 	private final Modelhopefultempestkick model;
 
 	public TempestRenderer(EntityRendererProvider.Context context) {

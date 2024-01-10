@@ -1,0 +1,11 @@
+{
+  "tempestsound": {
+    "subtitle": "subtitles.tempestsound",
+    "sounds": [
+      {
+        "name": "sixtechniques:actualltempestkicknoise2",
+        "stream": false
+      }
+    ]
+  }
+}
