@@ -91,6 +91,7 @@ public class SixtechniquesModVariables {
 		public double Metal_Body_Cooldown = 0;
 		public double Geppo_Cooldown = 0;
 		public double Geppo_Delay = 0;
+		public double Paper_Arts_Cooldown = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -103,6 +104,7 @@ public class SixtechniquesModVariables {
 			Metal_Body_Cooldown = nbt.getDouble("Metal_Body_Cooldown");
 			Geppo_Cooldown = nbt.getDouble("Geppo_Cooldown");
 			Geppo_Delay = nbt.getDouble("Geppo_Delay");
+			Paper_Arts_Cooldown = nbt.getDouble("Paper_Arts_Cooldown");
 		}
 
 		@Override
@@ -111,6 +113,7 @@ public class SixtechniquesModVariables {
 			nbt.putDouble("Metal_Body_Cooldown", Metal_Body_Cooldown);
 			nbt.putDouble("Geppo_Cooldown", Geppo_Cooldown);
 			nbt.putDouble("Geppo_Delay", Geppo_Delay);
+			nbt.putDouble("Paper_Arts_Cooldown", Paper_Arts_Cooldown);
 			return nbt;
 		}
 
