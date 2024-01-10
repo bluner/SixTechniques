@@ -1,0 +1,19 @@
+{
+  "_fv": 57,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "Blocks.SOUL_TORCH"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "igniteFire": false,
+    "power": 3.0,
+    "damage": 5.0,
+    "knockback": 0,
+    "entityModel": "Modelhopefultempestkick",
+    "customModelTexture": "hopefulltempest.png"
+  }
+}

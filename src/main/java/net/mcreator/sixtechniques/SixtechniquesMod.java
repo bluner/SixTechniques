@@ -30,6 +30,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.sixtechniques.init.SixtechniquesModMobEffects;
+import net.mcreator.sixtechniques.init.SixtechniquesModEntities;
 
 import java.util.function.Supplier;
 import java.util.function.Function;
@@ -48,6 +49,8 @@ public class SixtechniquesMod {
 	public SixtechniquesMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+		SixtechniquesModEntities.REGISTRY.register(bus);
 
 		SixtechniquesModMobEffects.REGISTRY.register(bus);
 
