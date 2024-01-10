@@ -156,6 +156,55 @@
           "src/main/java/net/mcreator/sixtechniques/potion/MetalBodyEffectMobEffect.java"
         ]
       }
+    },
+    {
+      "name": "PaperArtsCooldown",
+      "type": "potioneffect",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paper_arts_cooldown",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/potion/PaperArtsCooldownMobEffect.java"
+        ]
+      }
+    },
+    {
+      "name": "PaperArtsOnKeyPressed",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paper_arts_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/procedures/PaperArtsOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PaperArts",
+      "type": "keybind",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paper_arts",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/network/PaperArtsMessage.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -182,6 +231,12 @@
       "type": "number",
       "scope": "map",
       "value": "0"
+    },
+    {
+      "name": "Paper_Arts_Cooldown",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -190,8 +245,10 @@
       "key.sixtechniques.flash_step": "Flash Step",
       "key.sixtechniques.geppo": "Geppo",
       "effect.sixtechniques.metal_body_cooldown": "Metal Body Cooldown",
+      "key.sixtechniques.paper_arts": "Paper Arts",
       "key.sixtechniques.metal_body": "Metal Body",
-      "effect.sixtechniques.metal_body_effect": "Metal Body"
+      "effect.sixtechniques.metal_body_effect": "Metal Body",
+      "effect.sixtechniques.paper_arts_cooldown": "Paper Arts Cooldown"
     }
   },
   "foldersRoot": {
