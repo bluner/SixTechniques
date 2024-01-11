@@ -38,6 +38,15 @@ public class PlayerDeathProcedure {
 			SixtechniquesModVariables.MapVariables.get(world).syncData(world);
 			SixtechniquesModVariables.MapVariables.get(world).Geppo_Delay = 0;
 			SixtechniquesModVariables.MapVariables.get(world).syncData(world);
+			{
+				double _setval = 10;
+				entity.getCapability(SixtechniquesModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.STAMINA = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			SixtechniquesModVariables.MapVariables.get(world).Stamina_Regen = 0;
+			SixtechniquesModVariables.MapVariables.get(world).syncData(world);
 		}
 	}
 }
