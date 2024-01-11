@@ -19,6 +19,7 @@ import net.mcreator.sixtechniques.network.PaperArtsMessage;
 import net.mcreator.sixtechniques.network.MetalBodyMessage;
 import net.mcreator.sixtechniques.network.GeppoMessage;
 import net.mcreator.sixtechniques.network.FlashStepMessage;
+import net.mcreator.sixtechniques.network.BMessage;
 import net.mcreator.sixtechniques.SixtechniquesMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
@@ -75,6 +76,19 @@ public class SixtechniquesModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping B = new KeyMapping("key.sixtechniques.b", GLFW.GLFW_KEY_B, "key.categories.gameplay") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				SixtechniquesMod.PACKET_HANDLER.sendToServer(new BMessage(0, 0));
+				BMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
@@ -82,6 +96,7 @@ public class SixtechniquesModKeyMappings {
 		event.register(GEPPO);
 		event.register(METAL_BODY);
 		event.register(PAPER_ARTS);
+		event.register(B);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -93,6 +108,7 @@ public class SixtechniquesModKeyMappings {
 				GEPPO.consumeClick();
 				METAL_BODY.consumeClick();
 				PAPER_ARTS.consumeClick();
+				B.consumeClick();
 			}
 		}
 	}
