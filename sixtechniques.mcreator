@@ -181,7 +181,16 @@
         "files": [
           "src/main/java/net/mcreator/sixtechniques/procedures/PaperArtsOnKeyPressedProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -253,7 +262,12 @@
         "files": [
           "src/main/java/net/mcreator/sixtechniques/procedures/PlayerCheckerProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     }
   ],

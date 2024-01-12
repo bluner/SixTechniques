@@ -52,7 +52,7 @@ public class PaperArtsMessage {
 			return;
 		if (type == 0) {
 
-			PlayerCheckerProcedure.execute();
+			PlayerCheckerProcedure.execute(world);
 		}
 	}
 

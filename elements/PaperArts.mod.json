@@ -4,7 +4,7 @@
   "definition": {
     "triggerKey": "X",
     "keyBindingName": "Paper Arts",
-    "keyBindingCategoryKey": "movement",
+    "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {
       "name": "PlayerChecker"
     }

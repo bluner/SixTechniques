@@ -63,7 +63,7 @@ public class SixtechniquesModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping PAPER_ARTS = new KeyMapping("key.sixtechniques.paper_arts", GLFW.GLFW_KEY_X, "key.categories.movement") {
+	public static final KeyMapping PAPER_ARTS = new KeyMapping("key.sixtechniques.paper_arts", GLFW.GLFW_KEY_X, "key.categories.gameplay") {
 		private boolean isDownOld = false;
 
 		@Override
