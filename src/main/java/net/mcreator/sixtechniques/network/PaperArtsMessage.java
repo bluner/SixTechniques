@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 
-import net.mcreator.sixtechniques.procedures.PaperArtsOnKeyPressedProcedure;
+import net.mcreator.sixtechniques.procedures.PlayerCheckerProcedure;
 import net.mcreator.sixtechniques.SixtechniquesMod;
 
 import java.util.function.Supplier;
@@ -52,7 +52,7 @@ public class PaperArtsMessage {
 			return;
 		if (type == 0) {
 
-			PaperArtsOnKeyPressedProcedure.execute(world, entity);
+			PlayerCheckerProcedure.execute();
 		}
 	}
 
