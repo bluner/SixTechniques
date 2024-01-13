@@ -11,9 +11,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.sixtechniques.network.SixtechniquesModVariables;
 
@@ -24,16 +27,16 @@ public class PaperArtsOnKeyPressedProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingHurtEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getEntity());
+			execute(event, event.getEntity().level(), event.getSource(), event.getEntity());
 		}
 	}
 
-	public static void execute(LevelAccessor world, Entity entity) {
-		execute(null, world, entity);
+	public static void execute(LevelAccessor world, DamageSource damagesource, Entity entity) {
+		execute(null, world, damagesource, entity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
-		if (entity == null)
+	private static void execute(@Nullable Event event, LevelAccessor world, DamageSource damagesource, Entity entity) {
+		if (damagesource == null || entity == null)
 			return;
 		double direction = 0;
 		double px = 0;
@@ -41,30 +44,34 @@ public class PaperArtsOnKeyPressedProcedure {
 		double pz = 0;
 		double temphealth = 0;
 		if (entity instanceof Player) {
-			if (SixtechniquesModVariables.MapVariables.get(world).Paper_Arts_Cooldown == 1) {
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 5, false, false));
-				direction = Mth.nextInt(RandomSource.create(), 1, 4);
-				px = entity.getX();
-				py = entity.getY();
-				pz = entity.getZ();
-				if (direction == 1) {
-					px = px + 3;
-				} else if (direction == 2) {
-					px = px - 3;
-				} else if (direction == 3) {
-					pz = pz + 3;
-				} else {
-					pz = pz - 3;
+			if (("" + damagesource).endsWith("(explosion.player)") != true && ("" + damagesource).endsWith("(fall)") != true && ("" + damagesource).endsWith("(drown)") != true && ("" + damagesource).endsWith("(inFire)") != true) {
+				if (SixtechniquesModVariables.MapVariables.get(world).Paper_Arts_Cooldown == 1) {
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 5, false, false));
+					direction = Mth.nextInt(RandomSource.create(), 1, 4);
+					px = entity.getX();
+					py = entity.getY();
+					pz = entity.getZ();
+					if (direction == 1) {
+						px = px + 2;
+					} else if (direction == 2) {
+						px = px - 2;
+					} else if (direction == 3) {
+						pz = pz + 2;
+					} else {
+						pz = pz - 2;
+					}
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles(ParticleTypes.LARGE_SMOKE, (entity.getX()), (entity.getY()), (entity.getZ()), 25, 0.5, 1, 0.5, 0);
+					{
+						Entity _ent = entity;
+						_ent.teleportTo(px, py, pz);
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(px, py, pz, _ent.getYRot(), _ent.getXRot());
+					}
+					SixtechniquesModVariables.MapVariables.get(world).Paper_Arts_Cooldown = 0;
+					SixtechniquesModVariables.MapVariables.get(world).syncData(world);
 				}
-				{
-					Entity _ent = entity;
-					_ent.teleportTo(px, py, pz);
-					if (_ent instanceof ServerPlayer _serverPlayer)
-						_serverPlayer.connection.teleport(px, py, pz, _ent.getYRot(), _ent.getXRot());
-				}
-				SixtechniquesModVariables.MapVariables.get(world).Paper_Arts_Cooldown = 0;
-				SixtechniquesModVariables.MapVariables.get(world).syncData(world);
 			}
 		}
 	}
