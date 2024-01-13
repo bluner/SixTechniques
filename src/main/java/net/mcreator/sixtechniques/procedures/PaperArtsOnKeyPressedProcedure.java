@@ -19,6 +19,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.sixtechniques.network.SixtechniquesModVariables;
+import net.mcreator.sixtechniques.init.SixtechniquesModMobEffects;
 
 import javax.annotation.Nullable;
 
@@ -44,7 +45,9 @@ public class PaperArtsOnKeyPressedProcedure {
 		double pz = 0;
 		double temphealth = 0;
 		if (entity instanceof Player) {
-			if (("" + damagesource).endsWith("(explosion.player)") != true && ("" + damagesource).endsWith("(fall)") != true && ("" + damagesource).endsWith("(drown)") != true && ("" + damagesource).endsWith("(inFire)") != true) {
+			if (("" + damagesource).endsWith("(mob)") == true || ("" + damagesource).endsWith("(arrow)") == true || ("" + damagesource).endsWith("(trident)") == true || ("" + damagesource).endsWith("(anvil)") == true
+					|| ("" + damagesource).endsWith("(fallingblock)") == true || ("" + damagesource).endsWith("(player)") == true || ("" + damagesource).endsWith("(sting)") == true || ("" + damagesource).endsWith("(thrown)") == true
+					|| ("" + damagesource).endsWith("(witherSkull)") == true || ("" + damagesource).endsWith("(stalagmite)") == true) {
 				if (SixtechniquesModVariables.MapVariables.get(world).Paper_Arts_Cooldown == 1) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 5, false, false));
@@ -62,7 +65,7 @@ public class PaperArtsOnKeyPressedProcedure {
 						pz = pz - 2;
 					}
 					if (world instanceof ServerLevel _level)
-						_level.sendParticles(ParticleTypes.LARGE_SMOKE, (entity.getX()), (entity.getY()), (entity.getZ()), 25, 0.5, 1, 0.5, 0);
+						_level.sendParticles(ParticleTypes.FIREWORK, (entity.getX()), (entity.getY()), (entity.getZ()), 25, 0.5, 1, 0.5, 0);
 					{
 						Entity _ent = entity;
 						_ent.teleportTo(px, py, pz);
@@ -71,6 +74,8 @@ public class PaperArtsOnKeyPressedProcedure {
 					}
 					SixtechniquesModVariables.MapVariables.get(world).Paper_Arts_Cooldown = 0;
 					SixtechniquesModVariables.MapVariables.get(world).syncData(world);
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(SixtechniquesModMobEffects.PAPER_ARTS_EFFECT.get());
 				}
 			}
 		}
