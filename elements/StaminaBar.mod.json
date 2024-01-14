@@ -1,0 +1,31 @@
+{
+  "_fv": 57,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "smaller_stamina_bar.png",
+          "use1Xscale": false,
+          "anchorPoint": "CENTER",
+          "x": 293,
+          "y": 206
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "StaminaBarProcedure"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -52,7 +52,7 @@ public class BMessage {
 			return;
 		if (type == 0) {
 
-			BOnKeyPressedProcedure.execute(entity);
+			BOnKeyPressedProcedure.execute(world, entity);
 		}
 	}
 
