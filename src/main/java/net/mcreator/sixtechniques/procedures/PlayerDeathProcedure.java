@@ -38,8 +38,6 @@ public class PlayerDeathProcedure {
 			SixtechniquesModVariables.MapVariables.get(world).syncData(world);
 			SixtechniquesModVariables.MapVariables.get(world).Geppo_Delay = 0;
 			SixtechniquesModVariables.MapVariables.get(world).syncData(world);
-			SixtechniquesModVariables.MapVariables.get(world).Paper_Arts_Cooldown = 0;
-			SixtechniquesModVariables.MapVariables.get(world).syncData(world);
 		}
 	}
 }
