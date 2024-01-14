@@ -19,6 +19,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.sixtechniques.network.SixtechniquesModVariables;
+import net.mcreator.sixtechniques.init.SixtechniquesModMobEffects;
 
 import javax.annotation.Nullable;
 
@@ -73,6 +74,8 @@ public class PaperArtsOnKeyPressedProcedure {
 					}
 					SixtechniquesModVariables.MapVariables.get(world).Paper_Arts_Cooldown = 0;
 					SixtechniquesModVariables.MapVariables.get(world).syncData(world);
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(SixtechniquesModMobEffects.PAPER_ARTS_EFFECT.get());
 				}
 			}
 		}

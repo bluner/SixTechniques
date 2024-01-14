@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.effect.MobEffect;
 
+import net.mcreator.sixtechniques.potion.PaperArtsEffectMobEffect;
 import net.mcreator.sixtechniques.potion.PaperArtsCooldownMobEffect;
 import net.mcreator.sixtechniques.potion.MetalBodyEffectMobEffect;
 import net.mcreator.sixtechniques.potion.MetalBodyCooldownMobEffect;
@@ -22,4 +23,5 @@ public class SixtechniquesModMobEffects {
 	public static final RegistryObject<MobEffect> METAL_BODY_COOLDOWN = REGISTRY.register("metal_body_cooldown", () -> new MetalBodyCooldownMobEffect());
 	public static final RegistryObject<MobEffect> PAPER_ARTS_COOLDOWN = REGISTRY.register("paper_arts_cooldown", () -> new PaperArtsCooldownMobEffect());
 	public static final RegistryObject<MobEffect> FALL_DAMAGE_IMMUNITY = REGISTRY.register("fall_damage_immunity", () -> new FallDamageImmunityMobEffect());
+	public static final RegistryObject<MobEffect> PAPER_ARTS_EFFECT = REGISTRY.register("paper_arts_effect", () -> new PaperArtsEffectMobEffect());
 }

@@ -690,9 +690,26 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "world",
             "type": "world"
           }
+        ]
+      }
+    },
+    {
+      "name": "PaperArtsEffect",
+      "type": "potioneffect",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paper_arts_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/sixtechniques/potion/PaperArtsEffectMobEffect.java"
         ]
       }
     }
@@ -774,7 +791,8 @@
       "effect.sixtechniques.fall_damage_immunity": "Fall Damage Immunity",
       "key.sixtechniques.metal_body": "Metal Body",
       "effect.sixtechniques.metal_body_effect": "Metal Body",
-      "effect.sixtechniques.paper_arts_cooldown": "Paper Arts Cooldown"
+      "effect.sixtechniques.paper_arts_cooldown": "Paper Arts Cooldown",
+      "effect.sixtechniques.paper_arts_effect": "Paper Arts"
     }
   },
   "foldersRoot": {
