@@ -5,19 +5,20 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.particles.ParticleTypes;
 
 import net.mcreator.sixtechniques.network.SixtechniquesModVariables;
 import net.mcreator.sixtechniques.init.SixtechniquesModEntities;
 import net.mcreator.sixtechniques.entity.TempestEntity;
-import net.mcreator.sixtechniques.SixtechniquesMod;
 
 public class BOnKeyPressedProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (SixtechniquesModVariables.MapVariables.get(world).Tempest_Kick_Cooldown == 0) {
-			SixtechniquesModVariables.MapVariables.get(world).Tempest_Kick_Cooldown = 1;
-			SixtechniquesModVariables.MapVariables.get(world).syncData(world);
+		if ((entity.getCapability(SixtechniquesModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SixtechniquesModVariables.PlayerVariables())).STAMINA >= 3) {
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, (entity.getX()), (entity.getY() + 1.5), (entity.getZ()), 15, 0.1, 0.1, 0.1, 0);
 			{
 				Entity _shootFrom = entity;
 				Level projectileLevel = _shootFrom.level();
@@ -38,10 +39,13 @@ public class BOnKeyPressedProcedure {
 					projectileLevel.addFreshEntity(_entityToSpawn);
 				}
 			}
-			SixtechniquesMod.queueServerWork(60, () -> {
-				SixtechniquesModVariables.MapVariables.get(world).Tempest_Kick_Cooldown = 0;
-				SixtechniquesModVariables.MapVariables.get(world).syncData(world);
-			});
+			{
+				double _setval = (entity.getCapability(SixtechniquesModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new SixtechniquesModVariables.PlayerVariables())).STAMINA - 3;
+				entity.getCapability(SixtechniquesModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.STAMINA = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
 	}
 }
