@@ -9,7 +9,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 293,
           "y": 206
         }
@@ -19,7 +19,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 288,
           "y": 206
         }
@@ -29,7 +29,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 283,
           "y": 206
         }
@@ -39,7 +39,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 278,
           "y": 206
         }
@@ -49,7 +49,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 253,
           "y": 206
         }
@@ -59,7 +59,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 273,
           "y": 206
         }
@@ -69,7 +69,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 268,
           "y": 206
         }
@@ -79,7 +79,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 263,
           "y": 206
         }
@@ -89,7 +89,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 258,
           "y": 206
         }

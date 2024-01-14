@@ -9,7 +9,7 @@
         "data": {
           "image": "smaller_stamina_bar.png",
           "use1Xscale": false,
-          "anchorPoint": "CENTER",
+          "anchorPoint": "BOTTOM_RIGHT",
           "x": 293,
           "y": 206
         }

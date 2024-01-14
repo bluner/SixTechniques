@@ -44,9 +44,9 @@ public class StaminaBar2Overlay {
 		RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 		RenderSystem.setShaderColor(1, 1, 1, 1);
 		if (StaminaBarProcedure2Procedure.execute(entity)) {
-			event.getGuiGraphics().blit(new ResourceLocation("sixtechniques:textures/screens/smaller_stamina_bar.png"), w / 2 + 80, h / 2 + 86, 0, 0, 16, 16, 16, 16);
+			event.getGuiGraphics().blit(new ResourceLocation("sixtechniques:textures/screens/smaller_stamina_bar.png"), w - 134, h - 34, 0, 0, 16, 16, 16, 16);
 
-			event.getGuiGraphics().blit(new ResourceLocation("sixtechniques:textures/screens/smaller_stamina_bar.png"), w / 2 + 75, h / 2 + 86, 0, 0, 16, 16, 16, 16);
+			event.getGuiGraphics().blit(new ResourceLocation("sixtechniques:textures/screens/smaller_stamina_bar.png"), w - 139, h - 34, 0, 0, 16, 16, 16, 16);
 
 		}
 		RenderSystem.depthMask(true);
